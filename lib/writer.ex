@@ -1,5 +1,14 @@
 defmodule Empresa.Writer do
-    defp to_map(%{nombre: n, posicion: p, sueldo: s}) do
+    alias Proyecto1.Empleado, as: Empleado
+
+    import Jason
+    ## Jason.enconde se podria poner encode()
+
+    import Jason, only: [{:encode, 1}, {:decode, 1}]
+    ## Jason.enconde se podria poner encode()
+    
+
+    defp to_map(%Empleado{nombre: n, posicion: p, sueldo: s}) do
         %{"nombre" => n, "posicion" => p, "sueldo" => s}
     end
 
@@ -7,12 +16,12 @@ defmodule Empresa.Writer do
         nil
     end
 
-    def pto_json(m) do
+    def to_json(m) do
         {:ok, json_version} = Jason.encode(m)
         json_version
     end
     defp dump(str) do
-        File.write("empleados.txt", str)
+        File.write("empleados.json", str)
     end
 
     def write(empledos) do
