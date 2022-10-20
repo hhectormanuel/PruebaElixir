@@ -14,8 +14,12 @@ defmodule Proyecto1 do
       :world
 
   """
+  defmodule Empleado do
+    defstruct [:nombre, :posicion, :sueldo]
+  end
   @spec hello() :: atom()
   def hello do
     :world
   end
+
 end
