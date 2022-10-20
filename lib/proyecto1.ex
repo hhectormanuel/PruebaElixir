@@ -1,6 +1,8 @@
 defmodule Proyecto1 do
   @moduledoc """
   Documentation for `Proyecto1`.
+  
+  This is proyect1 which is a proyect built to learn
   """
 
   @doc """
@@ -12,6 +14,7 @@ defmodule Proyecto1 do
       :world
 
   """
+  @spec hello() :: atom()
   def hello do
     :world
   end
